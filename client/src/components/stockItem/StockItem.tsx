@@ -32,7 +32,6 @@ export const StockItem: FC<IStockItem> = ({
   const boxShadow = useRaisedShadow(y)
 
   const handleDelete = () => {
-    // dispatch(removeTicker(ticker))
     dispatch(deleteStockData({ ticker }))
   }
 

@@ -18,6 +18,7 @@ export const Input = () => {
 
     if (inputValue !== "" && inputValue !== null && checkTicker.length === 0) {
       e.preventDefault()
+      setInputValue("")
       dispatch(addNewStockData({ ticker: inputValue }))
     }
   }

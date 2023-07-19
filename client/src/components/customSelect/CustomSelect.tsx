@@ -1,15 +1,17 @@
-import { useEffect, ChangeEvent, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import { useAppDispatch } from "../../app/hooks"
 import { changeInterval } from "../../features/stockData/stockDataSlice"
 
 export const CustomSelect = () => {
   const [selectValue, setSelectValue] = useState<string>("5000")
   const dispatch = useAppDispatch()
+
   const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectValue(e.target.value)
 
     dispatch(changeInterval(e.target.value))
   }
+
   return (
     <div className="mb-14 border-[1px] rounded-md py-4 px-8 shadow-slate-200 shadow-lg">
       <label className="text-slate-800 text-lg font-medium">
